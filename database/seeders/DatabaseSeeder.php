@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
             \DB::table('patients')->insert([
 
-                'name' => $faker->name,
+                'name' => explode(' ', $faker->name)[0],
                 'species' => $faker->randomElement(['Куче', 'Котка', 'Птичка', 'Змия', 'Зайче', 'Морско свинче', 'Кон', 'Крава']),
                 'color' => $faker->randomElement(['кафяв', 'черен', 'бял', 'оранжев', 'шарен', 'зелен', 'бежов']),
                 'birthday' => $faker->dateTimeBetween('-10 years', 'now')->format('Y-m-d'),

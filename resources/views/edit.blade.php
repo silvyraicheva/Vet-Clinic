@@ -63,19 +63,33 @@
                 </div>
                 <div class="form-group">
                     <label for="birthday">Дата на раждане:</label>
-
-                    <input type="date" id="birthday" name="birthday" value="2023-12-02" min="2000-01-01"
-                        max="2024-01-01" />
+                    <div>
+                        <input type="date" id="birthday" name="birthday" value="2023-12-02" min="2000-01-01"
+                            max="2024-01-01" />
+                    </div>
                     {{-- <label for="birthday">Дата на раждане:</label> --}}
 
                     {{-- <input type="text" class="form-control" name="birthday" value="{{ $patient->birthday }}" /> --}}
 
                 </div>
                 <div class="form-group">
-
                     <label for="gender">Пол:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="gender" value="женско"
+                                {{ old('gender', $patient->gender) == 'женско' ? 'checked' : '' }}>
+                            Женско
+                        </label>
 
-                    <input type="text" class="form-control" name="gender" value="{{ $patient->gender }}" />
+                        <label>
+                            <input type="radio" name="gender" value="мъжко"
+                                {{ old('gender', $patient->gender) == 'мъжко' ? 'checked' : '' }}>
+                            Мъжко
+                        </label>
+                    </div>
+                    {{-- <label for="gender">Пол:</label>
+
+                    <input type="text" class="form-control" name="gender" value="{{ $patient->gender }}" /> --}}
 
                 </div>
                 <div class="form-group">

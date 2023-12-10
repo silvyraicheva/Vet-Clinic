@@ -54,6 +54,8 @@
 
                 </div>
 
+
+
                 <div class="form-group">
 
                     <label for="color">Цвят:</label>
@@ -63,9 +65,9 @@
                 </div>
                 <div class="form-group">
                     <label for="birthday">Дата на раждане:</label>
-
-                    <input type="date" id="birthday" name="birthday" min="2000-01-01" max="2024-01-01" />
-
+                    <div>
+                        <input type="date" id="birthday" name="birthday" min="2000-01-01" max="2024-01-01" />
+                    </div>
                     {{-- <label for="birthday">Дата на раждане:</label>
 
                     <input type="text" class="form-control" name="birthday" /> --}}
@@ -74,8 +76,20 @@
                 <div class="form-group">
 
                     <label for="gender">Пол:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="gender" value="женско"
+                                {{ old('gender') == 'женско' ? 'checked' : '' }}>
+                            Женско
+                        </label>
 
-                    <input type="text" class="form-control" name="gender" />
+                        <label>
+                            <input type="radio" name="gender" value="мъжко"
+                                {{ old('gender') == 'мъжко' ? 'checked' : '' }}>
+                            Мъжко
+                        </label>
+                    </div>
+                    {{-- <input type="text" class="form-control" name="gender" /> --}}
 
                 </div>
                 <div class="form-group">
