@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                 'color' => $faker->randomElement(['кафяв', 'черен', 'бял', 'оранжев', 'шарен', 'зелен', 'бежов']),
                 'birthday' => $faker->dateTimeBetween('-10 years', 'now')->format('Y-m-d'),
                 'gender' => $faker->randomElement(['женско', 'мъжко']),
-                'weight' => mt_rand(1, 50) / 10,
+                'weight' => mt_rand(1, 700) / 10,
             ]);
 
         }
