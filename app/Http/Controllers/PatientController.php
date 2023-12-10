@@ -34,7 +34,6 @@ class PatientController extends Controller
 
             'name' => 'required|max:255',
             'species' => 'required|max:255',
-
             'color' => 'required|max:255',
             'birthday' => 'required|date',
             'gender' => 'required|max:255',
@@ -81,7 +80,6 @@ class PatientController extends Controller
 
             'name' => 'required|max:255',
             'species' => 'required|max:255',
-
             'color' => 'required|max:255',
             'birthday' => 'required|date',
             'gender' => 'required|max:255',
