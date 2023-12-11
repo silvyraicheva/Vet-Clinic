@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $patients = \App\Models\Patient::all()->sortByDesc('id')->take(10);
+
+    return view('welcome', compact('patients'));
+
 });
 
 Route::get('/dashboard', function () {

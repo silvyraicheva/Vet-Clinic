@@ -696,6 +696,30 @@
             z-index: 10
         }
 
+        body {
+            margin: 0;
+            line-height: inherit;
+            background-color: #f3f4f6;
+        }
+
+
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9fafb;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+
+
         @media (prefers-reduced-motion: no-preference) {
             .motion-safe\:hover\:scale-\[1\.01\]:hover {
                 --tw-scale-x: 1.01;
@@ -837,8 +861,7 @@
 
 
 
-        <img src="https://img.freepik.com/free-vector/veterinary-clinic-with-doctor-sick-pets_107791-11715.jpg?w=1380&t=st=1702210828~exp=1702211428~hmac=866e628cba923a81ed9112831215d5c610525a57c4f26aed499e7d1378e84db8"
-            alt="">
+
 
         @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -856,6 +879,39 @@
                 @endauth
             </div>
         @endif
+
+
+        <div class="container mx-auto p-6">
+            <h1 class="text-3xl font-semibold mb-6 text-center text-gray-900 dark:text-white">Последни 10 записа</h1>
+
+            <table class="min-w-full bg-white border border-black dark:border-gray-700 rounded-md overflow-hidden">
+                <thead class="bg-gray-100 dark:bg-gray-800">
+                    <tr>
+                        <th class="py-2 px-4 border-b border-black dark:border-gray-700">Име</th>
+                        <th class="py-2 px-4 border-b border-black dark:border-gray-700">Вид</th>
+                        <th class="py-2 px-4 border-b border-black dark:border-gray-700">Цвят</th>
+                        <th class="py-2 px-4 border-b border-black dark:border-gray-700">Дата на раждане</th>
+                        <th class="py-2 px-4 border-b border-black dark:border-gray-700">Пол</th>
+                        <th class="py-2 px-4 border-b border-black dark:border-gray-700">Тегло</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($patients as $patient)
+                        <tr>
+                            <td class="py-2 px-4 border-b border-black dark:border-gray-700">{{ $patient->name }}</td>
+                            <td class="py-2 px-4 border-b border-black dark:border-gray-700">{{ $patient->species }}
+                            </td>
+                            <td class="py-2 px-4 border-b border-black dark:border-gray-700">{{ $patient->color }}</td>
+                            <td class="py-2 px-4 border-b border-black dark:border-gray-700">{{ $patient->birthday }}
+                            </td>
+                            <td class="py-2 px-4 border-b border-black dark:border-gray-700">{{ $patient->gender }}</td>
+                            <td class="py-2 px-4 border-b border-black dark:border-gray-700">{{ $patient->weight }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
 
     </div>
 
